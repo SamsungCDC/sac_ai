@@ -7,11 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node node_modules/@sap/approuter/approuter.js",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "@sap/approuter": "^14.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

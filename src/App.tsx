@@ -486,13 +486,9 @@ export default function App() {
       const prompt = buildPrompt(mode);
 
       // 프록시 유지: /api/chat
-      const res = await fetch("https://development-sec.it-cpi015-rt.cfapps.ap12.hana.ondemand.com/http/ai/test", {
+      const res = await fetch("/api/ai/test", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Task-Mode": mode,
-          "Authorization": "Basic UDIwMDc2MTUxNDY6MXFhelhTV0AjRQ=="  // username:password → base64 인코딩한 문자열
-        },
+        headers: { "Content-Type": "application/json", "X-Task-Mode": mode },
         body: JSON.stringify({
           content: text,  // 사용자가 입력한 자연어
           mode,           // "GENERAL" | "QUERY_LIST" | "QUERY_SIMILAR"

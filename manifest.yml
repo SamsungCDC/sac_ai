@@ -1,10 +1,27 @@
 ---
 applications:
-  - name: ciam-ai-demo
+  - name: my-chat-ui
+    memory: 256M
     buildpacks:
-      - staticfile_buildpack
-    memory: 128M
-    disk_quota: 128M
-    random-route: true
-    instances: 1
-    path: dist
+      - nodejs_buildpack
+    command: npm start
+    env:
+      NODE_ENV: production
+      NPM_CONFIG_PRODUCTION: "false"
+      DESTINATIONS: >-
+        [
+          {
+            "name": "dest_cpi_ai",
+            "url": "https://development-sec.it-cpi015-rt.cfapps.ap12.hana.ondemand.com",
+            "forwardAuthToken": false,
+            "authentication": "BasicAuthentication",
+            "username": "P2007615146",
+            "password": "1qazXSW@#E"
+          },
+          {
+            "name": "dest_ciam_api",
+            "url": "https://sec-dev-ciam-api.cfapps.ap12.hana.ondemand.com",
+            "forwardAuthToken": false,
+            "authentication": "NoAuthentication"
+          }
+        ]

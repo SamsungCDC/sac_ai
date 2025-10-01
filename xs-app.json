@@ -1,0 +1,19 @@
+{
+  "welcomeFile": "/index.html",
+  "authenticationMethod": "none",
+  "routes": [
+    {
+      "source": "^/api/ai/test$",
+      "target": "/http/ai/test",
+      "destination": "dest_cpi_ai"
+    },
+    {
+      "source": "^/api/voc-data/(.*)$",
+      "target": "/http/restapi/extension/sec/voc-data/$1",
+      "destination": "dest_ciam_api"
+    }
+  ],
+  "resources": [
+    { "source": "^/(.*)$", "localDir": "dist" }
+  ]
+}
