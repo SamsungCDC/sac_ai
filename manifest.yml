@@ -2,6 +2,7 @@
 applications:
   - name: ciam-ai-demo
     memory: 128M
+    default-route: true
     buildpacks:
       - nodejs_buildpack
     command: npm start
