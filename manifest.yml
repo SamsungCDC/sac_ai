@@ -1,7 +1,7 @@
 ---
 applications:
-  - name: my-chat-ui
-    memory: 256M
+  - name: ciam-ai-demo
+    memory: 128M
     buildpacks:
       - nodejs_buildpack
     command: npm start
